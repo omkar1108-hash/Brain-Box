@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Edit Task</title>
+    <meta charset="UTF-8">
+
+    <!-- ✅ CSS LINK -->
+    <link rel="stylesheet" href="../css/task_edit.css">
+</head>
+
+<body>
+
+<h2>📝 Edit Task</h2>
+
+<div class="form-card">
+
+    <label>Task Title *</label>
+    <input type="text" id="taskTitle">
+
+    <label>Description</label>
+    <textarea id="taskDescription"></textarea>
+
+    <label>Category</label>
+    <select id="categorySelect">
+        <option value="Auto">Auto (Recommended)</option>
+    </select>
+
+    <input type="text"
+           id="customCategory"
+           placeholder="Or create custom category">
+
+    <label>Due Date</label>
+    <input type="date" id="dueDate">
+
+    <label>Priority (0 – 10)</label>
+    <input type="range" id="priority" min="0" max="10"
+           oninput="priorityValue.innerText = this.value">
+    <span class="range-value">Value: <b id="priorityValue">0</b></span>
+
+    <label>Difficulty (0 – 10)</label>
+    <input type="range" id="difficulty" min="0" max="10"
+           oninput="difficultyValue.innerText = this.value">
+    <span class="range-value">Value: <b id="difficultyValue">0</b></span>
+
+    <label>Status</label>
+    <select id="taskStatus">
+        <option value="pending">Pending</option>
+        <option value="completed">Completed</option>
+    </select>
+
+    <div class="btn-group">
+        <button onclick="updateTask()" class="primary-btn">
+            💾 Update
+        </button>
+
+        <button onclick="deleteTask()" class="danger-btn">
+            🗑 Delete
+        </button>
+
+        <button onclick="goBack()" class="secondary-btn">
+            ⬅ Back
+        </button>
+    </div>
+
+</div>
+
+<script src="/js/task_edit.js"></script>
+
+</body>
+</html>

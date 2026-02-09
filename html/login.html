@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Login</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .box {
+            background: white;
+            padding: 30px;
+            width: 320px;
+            border-radius: 8px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .link {
+            margin-top: 15px;
+            text-align: center;
+        }
+        .error {
+            color: red;
+            text-align: center;
+        }
+    </style>
+     <link rel="stylesheet" href="../css/login.css">
+</head>
+<body>
+
+<div class="box">
+    <h2>Login</h2>
+    <div class="project-title">BRAIN BOX</div>
+<h2>Secure Access Portal</h2>
+
+    <input id="username" placeholder="Username or Email">
+    <input id="password" type="password" placeholder="Password">
+
+    <button onclick="login()">Login</button>
+
+    <div id="error" class="error"></div>
+
+    <div class="link">
+        New user? <a href="/register">Register</a>
+    </div>
+</div>
+
+<script src="../js/login.js"></script>
+</body>
+</html>

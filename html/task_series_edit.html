@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Task Series</title>
+
+    <!-- ✅ CSS LINK -->
+    <link rel="stylesheet" href="../css/task_series_edit.css">
+</head>
+
+<body>
+
+<h2>📂 Edit Task Series</h2>
+
+<div class="form-card">
+
+    <!-- ================= PROGRESS ================= -->
+    <div class="progress-wrapper">
+        <div class="progress-header">
+            <strong>Progress</strong>
+            <span id="progressText">0%</span>
+        </div>
+
+        <div class="progress-bar-bg">
+            <div id="progressBar" class="progress-bar-fill"></div>
+        </div>
+    </div>
+
+    <!-- SERIES TITLE -->
+    <label>Series Title</label>
+    <input id="seriesTitle" type="text">
+
+    <!-- TASK LIST -->
+    <div id="taskList"></div>
+
+    <button class="add-btn" onclick="addTask()">+ Add Task</button>
+
+    <div class="btn-group">
+        <button onclick="updateSeries()" class="primary-btn">
+            💾 Update
+        </button>
+
+        <button onclick="goBack()" class="secondary-btn">
+            ⬅ Back
+        </button>
+    </div>
+
+</div>
+
+<script src="/js/task_series_edit.js"></script>
+
+</body>
+</html>

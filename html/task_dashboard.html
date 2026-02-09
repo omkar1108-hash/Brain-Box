@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Tasks Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/task_dashboard.css">
+</head>
+<body>
+
+
+<div id="master-container" style="position:relative; top: -65px;"></div>
+
+<div class="dashboard-container">
+<h2>Tasks Dashboard</h2>
+
+<!-- ACTION BUTTONS -->
+<div class="action-buttons">
+        <button onclick="goToCreateTask()">➕ Create New Task</button>
+        <button onclick="goToCreateSeries()">📂 Create Task Series</button>
+    </div>
+<hr>
+
+<!-- STATUS FILTERS -->
+<div id="statusFilters">
+    <button class="filter-btn active" onclick="setStatusFilter('all')">All</button>
+    <button class="filter-btn" onclick="setStatusFilter('pending')">Pending</button>
+    <button class="filter-btn" onclick="setStatusFilter('completed')">Completed</button>
+</div>
+
+<hr>
+
+<!-- CATEGORY FILTERS -->
+<div id="categoryButtons"></div>
+
+<hr>
+
+<!-- TASKS / SERIES LIST -->
+<div id="tasksList" class="notes-container"></div>
+</div>
+
+<script src="../js/task_dashboard.js"></script>
+<script src="../js/master.js"></script>
+
+</body>
+</html>

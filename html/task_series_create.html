@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Task Series</title>
+
+    <!-- ✅ Correct CSS Link -->
+    <link rel="stylesheet" href="../css/task_series_create.css">
+</head>
+
+<body>
+
+<h2>📂 Create Task Series</h2>
+
+<div class="form-card">
+
+    <!-- SERIES TITLE -->
+    <label>Series Title *</label>
+    <input type="text" id="seriesTitle" placeholder="Enter series / project title">
+
+    <!-- EXPAND BAR -->
+    <div class="expand-bar" onclick="toggleAdvanced()">
+        <span id="plusIcon">+</span>
+    </div>
+
+    <!-- ADVANCED SECTION -->
+    <div class="advanced" id="advancedSection">
+
+        <!-- CATEGORY -->
+        <label>Category</label>
+        <select id="categorySelect">
+            <option value="Auto">Auto (Recommended)</option>
+        </select>
+
+        <input type="text"
+               id="customCategory"
+               placeholder="Or create custom category">
+
+        <!-- TASK LIST -->
+        <label>Tasks in this Series *</label>
+        <div id="taskList"></div>
+
+        <button type="button" class="add-btn" onclick="addTask()">
+            + Add Task
+        </button>
+
+    </div>
+
+    <!-- ACTIONS -->
+    <div class="actions">
+        <button onclick="saveSeries()" class="primary-btn">
+            💾 Save Series
+        </button>
+
+        <button onclick="goBack()" class="secondary-btn">
+            ⬅ Back
+        </button>
+    </div>
+
+</div>
+
+<script src="../js/task_series_create.js"></script>
+</body>
+</html>

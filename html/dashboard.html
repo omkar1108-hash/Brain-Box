@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Notes Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/master.css">
+
+</head>
+
+<body>
+<div id="master-container" style="position:relative; top: -40px;"></div>
+<div class="dashboard-container">
+
+    <h2>📝 Notes Dashboard</h2>
+
+    <!-- CREATE BUTTON -->
+    <div class="top-bar">
+        <button class="create-btn" onclick="goToCreate()">
+            ➕ Create New Note
+        </button>
+    </div>
+
+   <div class="main-layout">
+
+    <!-- LEFT SIDE -->
+    <div class="sidebar">
+
+        <div id="protectionFilters" class="filter-section">
+            <button class="filter-btn active"
+                onclick="setProtectionFilter('all')">All</button>
+
+            <button class="filter-btn"
+                onclick="setProtectionFilter('protected')">Protected</button>
+
+            <button class="filter-btn"
+                onclick="setProtectionFilter('unprotected')">Unprotected</button>
+        </div>
+
+        <div id="categoryButtons" class="category-section"></div>
+
+    </div>
+
+    <!-- RIGHT SIDE -->
+    <div class="content-area">
+        <div id="notesList" class="notes-container"></div>
+    </div>
+
+</div>
+
+
+<script src="../js/dashboard.js"></script>
+<script src="../js/master.js"></script>
+</body>
+</html>

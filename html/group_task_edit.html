@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Group Task</title>
+    <link rel="stylesheet" href="../css/group_task_edit.css">
+</head>
+<body>
+
+<div class="page-container">
+    <div class="form-card">
+        <h2 class="header-title">⚙️ Edit Group Task</h2>
+
+        <div id="progressContainer">
+            <div class="progress-info">
+                <strong>Current Progress</strong>
+                <span id="progressText">0%</span>
+            </div>
+            <div class="progress-track">
+                <div id="progressBar"></div>
+            </div>
+        </div>
+
+        <div class="form-group">
+            <label>Group Title</label>
+            <input id="groupTitle" disabled>
+        </div>
+
+        <hr class="section-divider">
+
+        <div class="section-header">
+            <h3>Members</h3>
+            <button class="add-btn-small" id="addMemberBtn" onclick="addMember()">+ Add Member</button>
+        </div>
+        <div id="memberList"></div>
+
+        <hr class="section-divider">
+
+        <div class="section-header">
+            <h3>Tasks</h3>
+            <button class="add-btn-small" onclick="addTask()">+ Add Task</button>
+        </div>
+        <div id="taskList"></div>
+
+        <div class="btn-group">
+            <button class="secondary-btn" onclick="goBack()">⬅ Back to Dashboard</button>
+        </div>
+    </div>
+</div>
+
+<script src="/js/group_task_edit.js"></script>
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Note</title>
+<link rel="stylesheet" href="../css/edit.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            padding: 20px;
+        }
+
+        .toolbar button {
+            margin-right: 6px;
+            padding: 5px 8px;
+            cursor: pointer;
+        }
+
+        #content {
+            width: 100%;
+            min-height: 220px;
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-top: 10px;
+        }
+
+        .image-wrapper {
+            display: inline-block;   /* default */
+            resize: both;
+            overflow: hidden;
+            vertical-align: middle;
+            cursor: pointer;
+        }
+
+
+        .image-wrapper img {
+            width: 100%;
+            height: auto;
+            display: block;
+            pointer-events: none;
+        }
+
+        .selected-image {
+            outline: 2px solid #4a90e2;
+        }
+    </style>
+</head>
+
+<body>
+<div class="edit-wrapper">
+
+
+<h2>Create New Note</h2>
+
+
+<div class="edit-grid">
+
+<div class="editor-section">
+<label>Title</label><br>
+<input type="text" id="title" style="width:100%"><br><br>
+
+<div class="toolbar">
+                <button onclick="alignSelected('left')">⬅</button>
+                <button onclick="alignSelected('center')">⬍</button>
+                <button onclick="alignSelected('right')">➡</button>
+
+                <input type="file" id="imageInput" accept="image/*" hidden>
+                <button onclick="triggerImageUpload()">🖼</button>
+
+                <button data-format="bold" onclick="toggleFormat('bold')"><b>B</b></button>
+                <button data-format="italic" onclick="toggleFormat('italic')"><i>I</i></button>
+                <button data-format="underline" onclick="toggleFormat('underline')"><u>U</u></button>
+
+                <input type="number"
+                       id="fontSizeInput"
+                       min="8"
+                       max="72"
+                       oninput="changeTextSize(this.value)"
+                       placeholder="Size">
+
+                <select id="fontSizeDropdown"
+                        onchange="onFontSizeDropdownChange(this)">
+                    <option value="">▼</option>
+                    <option value="8">8</option>
+                    <option value="10">10</option>
+                    <option value="12">12</option>
+                    <option value="14">14</option>
+                    <option value="16">16</option>
+                    <option value="18">18</option>
+                    <option value="24">24</option>
+                    <option value="36">36</option>
+                    <option value="48">48</option>
+                    <option value="72">72</option>
+                </select>
+            </div>
+
+<label>Content</label>
+<div id="content" contenteditable="true"></div>
+</div>
+
+<div class="side-panel">
+
+<label>
+    <input type="checkbox" id="protectCheck">
+    Protect this note
+    
+</label><br><br>
+
+<div id="passwordPopup" style="display:none; border:1px solid #ccc; padding:10px;">
+    <label>Enter Password</label><br>
+    <input type="password" id="password"><br><br>
+    <button onclick="confirmPassword()">Confirm & Save</button>
+</div>
+
+<br>
+<label>Category</label><br>
+
+<select id="categorySelect">
+    <option value="Auto">Auto (Recommended)</option>
+</select>
+
+<br><br>
+
+<input type="text"
+       id="customCategory"
+       placeholder="Or create custom category">
+<br><br>
+
+<br>
+<div class="action-buttons">
+<button onclick="saveNote()">Save</button>
+
+<button onclick="goBack()">⬅ Back</button>
+</div>
+<p id="result"></p>
+</div>
+</div>
+</div>
+<script src="../js/index.js"></script>
+</body>
+</html>

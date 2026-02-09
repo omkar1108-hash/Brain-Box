@@ -1,0 +1,153 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= ANIMATED BACKGROUND ================= */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+
+    background: linear-gradient(-45deg, #4f46e5, #7c3aed, #1fa2ff, #0ea5e9);
+    background-size: 400% 400%;
+    animation: gradientMove 12s ease infinite;
+
+    min-height: 100vh;
+    padding: 60px 20px;
+}
+
+@keyframes gradientMove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ================= PAGE TITLE ================= */
+h2 {
+    text-align: center;
+    color: white;
+    font-size: 32px;
+    margin-bottom: 35px;
+    text-shadow: 0 6px 18px rgba(0,0,0,0.3);
+}
+
+/* ================= FORM CARD ================= */
+.form-card {
+    max-width: 750px;
+    margin: auto;
+
+    background: rgba(255, 255, 255, 0.96);
+    backdrop-filter: blur(8px);
+
+    padding: 45px;
+    border-radius: 28px;
+
+    box-shadow:
+        0 30px 70px rgba(0,0,0,0.25),
+        inset 0 1px 1px rgba(255,255,255,0.6);
+}
+
+/* ================= LABELS ================= */
+label {
+    font-weight: 600;
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 25px;
+    color: #1e293b;
+}
+
+/* ================= INPUTS ================= */
+input,
+select,
+textarea {
+    width: 100%;
+    padding: 14px 16px;
+    border-radius: 16px;
+    border: none;
+    background: #f8fafc;
+    font-size: 15px;
+    transition: 0.3s ease;
+
+    box-shadow: 0 6px 18px rgba(0,0,0,0.08);
+}
+
+textarea {
+    resize: vertical;
+    min-height: 90px;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    outline: none;
+    box-shadow:
+        0 0 0 2px #60a5fa,
+        0 10px 30px rgba(37,99,235,0.3);
+}
+
+/* ================= RANGE VALUE ================= */
+.range-value {
+    display: block;
+    margin-top: 8px;
+    font-size: 14px;
+    color: #475569;
+}
+
+/* ================= BUTTON GROUP ================= */
+.btn-group {
+    margin-top: 40px;
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    flex-wrap: wrap;
+}
+
+/* PRIMARY BUTTON */
+.primary-btn {
+    background: linear-gradient(45deg, #2563eb, #60a5fa);
+    color: white;
+    border: none;
+    padding: 14px 26px;
+    border-radius: 18px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 15px 35px rgba(37,99,235,0.4);
+    transition: 0.3s ease;
+}
+
+.primary-btn:hover {
+    transform: translateY(-4px);
+}
+
+/* DANGER BUTTON */
+.danger-btn {
+    background: linear-gradient(45deg, #ef4444, #f87171);
+    color: white;
+    border: none;
+    padding: 14px 26px;
+    border-radius: 18px;
+    cursor: pointer;
+    font-weight: 600;
+    box-shadow: 0 15px 35px rgba(239,68,68,0.4);
+    transition: 0.3s ease;
+}
+
+.danger-btn:hover {
+    transform: translateY(-4px);
+}
+
+/* BACK BUTTON */
+.secondary-btn {
+    background: #e2e8f0;
+    border: none;
+    padding: 14px 26px;
+    border-radius: 18px;
+    cursor: pointer;
+    font-weight: 500;
+    transition: 0.3s ease;
+}
+
+.secondary-btn:hover {
+    background: #cbd5e1;
+}

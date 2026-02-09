@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Create Task</title>
+    <link rel="stylesheet" href="../css/task_create.css">
+</head>
+
+<body>
+
+<div class="page-container">
+
+    <h2>📝 Create Task</h2>
+
+    <div class="form-card">
+
+        <label>Task Title *</label>
+        <input type="text" id="taskTitle" placeholder="Enter task title">
+
+        <div class="expand-bar" onclick="toggleAdvanced()">
+            <span class="plus-btn" id="plusIcon">+</span>
+        </div>
+
+        <div class="advanced" id="advancedSection">
+
+            <label>Description</label>
+            <textarea id="taskDescription"></textarea>
+
+            <label>Category</label>
+            <select id="categorySelect">
+                <option value="Auto">Auto (Recommended)</option>
+            </select>
+
+            <input type="text"
+                   id="customCategory"
+                   placeholder="Or create custom category">
+
+            <label>Due Date</label>
+            <input type="date" id="dueDate">
+
+            <label>
+                <input type="checkbox" id="reminderCheck">
+                Set Reminder
+            </label>
+
+            <div class="reminder-box" id="reminderBox">
+                <label>Reminder Time</label>
+                <input type="datetime-local" id="reminderTime">
+
+                <label>Reminder Type</label>
+                <select id="reminderType">
+                    <option value="email">Email</option>
+                    <option value="sms">SMS</option>
+                </select>
+            </div>
+
+            <label>Priority (0–10)</label>
+            <input type="range" id="priority" min="0" max="10" value="0">
+
+            <label>Difficulty (0–10)</label>
+            <input type="range" id="difficulty" min="0" max="10" value="0">
+
+            <label>Status</label>
+            <select id="taskStatus">
+                <option value="pending">Pending</option>
+                <option value="completed">Completed</option>
+            </select>
+
+        </div>
+
+        <div class="btn-group">
+            <button onclick="saveTask()" class="primary-btn">
+                💾 Save
+            </button>
+
+            <button onclick="goBack()" class="secondary-btn">
+                ⬅ Back
+            </button>
+        </div>
+
+    </div>
+
+</div>
+
+<script src="../js/task_create.js"></script>
+</body>
+</html>

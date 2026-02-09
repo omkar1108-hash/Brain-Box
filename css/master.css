@@ -1,0 +1,82 @@
+/* ================= NAVBAR ================= */
+
+#masterNavbar {
+    width: 100%;
+    padding: 16px 50px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    /* MATCH DASHBOARD THEME */
+    background: linear-gradient(90deg, #2563eb, #7c3aed);
+
+    border-radius: 0 0 20px 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.25);
+}
+
+/* App Name */
+.app-name {
+    font-size: 22px;
+    font-weight: 700;
+    color: white;
+    letter-spacing: 1px;
+}
+
+/* Nav links container */
+#navLinks {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+/* Links */
+.nav-link {
+    text-decoration: none;
+    color: rgba(255,255,255,0.85);
+    font-weight: 500;
+    transition: 0.3s ease;
+    position: relative;
+}
+
+/* Smooth underline effect */
+.nav-link::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 0%;
+    height: 2px;
+    background: white;
+    transition: 0.3s;
+}
+
+.nav-link:hover {
+    color: white;
+}
+
+.nav-link:hover::after {
+    width: 100%;
+}
+
+/* Disabled */
+.disabled-link {
+    color: rgba(255,255,255,0.5);
+    cursor: not-allowed;
+}
+
+/* Logout Button */
+#logoutBtn {
+    background: white;
+    color: #7c3aed;
+    border: none;
+    padding: 8px 18px;
+    border-radius: 10px;
+    font-weight: 600;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+#logoutBtn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 8px 20px rgba(0,0,0,0.25);
+}

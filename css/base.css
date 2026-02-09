@@ -1,0 +1,67 @@
+:root {
+  --overlay: rgba(0,0,0,0.55);
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Poppins, sans-serif;
+  background: black;
+  color: white;
+  overflow-x: hidden;
+}
+
+.screen {
+  height: 100vh;
+  position: relative;
+}
+
+.fixed-background {
+  position: fixed;
+  inset: 0;
+  z-index: 1;
+  background-size: cover;
+  background-position: center;
+  transition: background-image 1.5s ease;
+}
+
+.fixed-background::after {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--overlay);
+}
+
+.screen-content {
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(0.6);
+  opacity: 0;
+  text-align: center;
+  width: min(1000px, 90%);
+  z-index: 2;
+  transition: all 1.5s ease;
+  pointer-events: none;
+}
+
+.screen-content.visible {
+  opacity: 1;
+  transform: translate(-50%, -50%) scale(1);
+  pointer-events: auto;
+}
+
+h1 {
+  font-size: clamp(2rem, 5vw, 3.5rem);
+  margin-bottom: 1rem;
+}
+
+.spacer {
+  height: 15vh;
+}
+
+

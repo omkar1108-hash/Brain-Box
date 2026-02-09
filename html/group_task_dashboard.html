@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Group Tasks Dashboard</title>
+    <link rel="stylesheet" href="../css/dashboard.css">
+    <link rel="stylesheet" href="../css/master.css">
+</head>
+<style>
+    body > button {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 12px 24px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    background: linear-gradient(45deg, #2563eb, #60a5fa);
+    color: white;
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+    transition: 0.3s ease;
+}
+
+body > button:hover {
+    transform: translateY(-4px) scale(1.05);
+}
+</style>
+<body>
+
+<div id="master-container" style="position: relative;top: -40px;"></div>
+
+<h2>Group Tasks</h2>
+
+<button onclick="goToCreateGroup()">👥 Create Group Task</button>
+
+<hr>
+
+<div id="groupTasksList" class="notes-container"></div>
+
+<script src="../js/group_task_dashboard.js"></script>
+<script src="../js/master.js"></script>
+
+</body>
+</html>

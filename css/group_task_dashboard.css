@@ -1,0 +1,105 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= ANIMATED BACKGROUND ================= */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    min-height: 100vh;
+    background: linear-gradient(-45deg, #4f46e5, #7c3aed, #0ea5e9, #22c55e);
+    background-size: 400% 400%;
+    animation: bgmove 12s ease infinite;
+    padding: 0 20px 40px 20px;
+}
+
+@keyframes bgmove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ================= HEADER ================= */
+h2 {
+    text-align: center;
+    margin-top: 40px;
+    margin-bottom: 25px;
+    color: white;
+    font-size: 32px;
+    font-weight: 800;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+body > button {
+    display: block;
+    margin: 0 auto 20px auto;
+    padding: 12px 24px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    background: linear-gradient(45deg, #2563eb, #60a5fa);
+    color: white;
+    box-shadow: 0 10px 20px rgba(37, 99, 235, 0.3);
+    transition: 0.3s ease;
+}
+
+body > button:hover {
+    transform: translateY(-4px) scale(1.05);
+}
+
+hr {
+    max-width: 1100px;
+    margin: 20px auto;
+    border: none;
+    height: 1px;
+    background: rgba(255, 255, 255, 0.2);
+}
+
+/* ================= TASKS GRID ================= */
+.notes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 25px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* ================= TASK CARD ================= */
+.task-card {
+    background: rgba(255, 255, 255, 0.95);
+    border-radius: 20px;
+    padding: 25px;
+    position: relative;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.2);
+    transition: 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.3);
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-height: 160px;
+}
+
+.task-card:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+}
+
+.task-title {
+    font-size: 20px;
+    font-weight: 700;
+    color: #1e293b;
+    margin-bottom: 12px;
+}
+
+.task-meta {
+    font-size: 13px;
+    color: #64748b;
+    margin-bottom: 8px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}

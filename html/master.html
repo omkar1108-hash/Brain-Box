@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Brain Box</title>
+</head>
+<body>
+
+<!-- MASTER NAVBAR -->
+<div id="masterNavbar" >
+
+    <!-- APP NAME -->
+    <strong class="app-name">Brain Box</strong>
+
+    <!-- NAV LINKS -->
+    <div id="navLinks">
+
+        <!-- NOTES DASHBOARD (AUTH ONLY) -->
+        <a href="/notes-dashboard"
+           class="auth-only nav-link"
+           style="color:white; margin-right:25px; font-weight:bold;">
+            Dashboard
+        </a>
+
+        <!-- TASK DASHBOARD (AUTH ONLY) -->
+        <a href="/task-dashboard"
+           class="auth-only nav-link"
+           style="color:white; margin-right:25px; font-weight:bold;">
+            Task Dashboard
+        </a>
+        
+        <a href="/group-dashboard"
+           class="auth-only nav-link"
+           style="color:white; margin-right:25px; font-weight:bold;">
+            Group Notes
+        </a>
+
+        <a href="/group-task-dashboard"
+           class="auth-only nav-link"
+           style="color:white; margin-right:25px; font-weight:bold;">
+            Group Task
+        </a>
+
+        <!-- LOGIN -->
+        <a href="/login"
+           id="loginBtn"
+           class="nav-link"
+           style="color:white; margin-left:25px; font-weight:bold;">
+            Login
+        </a>
+
+        <!-- REGISTER -->
+        <a href="/register"
+           id="registerBtn"
+           class="nav-link"
+           style="color:white; margin-left:15px; font-weight:bold;">
+            Register
+        </a>
+
+        <!-- LOGOUT -->
+        <button id="logoutBtn"
+                onclick="logout()"
+                style="
+                    display:none;
+                    margin-left:25px;
+                    background:#e74c3c;
+                    color:white;
+                    border:none;
+                    padding:6px 12px;
+                    cursor:pointer;
+                    font-weight:bold;
+                ">
+            Logout
+        </button>
+
+    </div>
+</div>
+
+</body>
+</html>

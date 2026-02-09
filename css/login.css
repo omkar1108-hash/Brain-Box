@@ -1,0 +1,119 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= BACKGROUND ================= */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    /* Matches the vibrant purple/blue gradient in your screenshot */
+    background: linear-gradient(135deg, #4f46e5 0%, #7c3aed 50%, #db2777 100%);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    color: #333;
+}
+
+/* ================= CARD ================= */
+.box {
+    background: white;
+    padding: 40px;
+    width: 420px;
+    border-radius: 28px; /* Extra rounded corners like your dashboard cards */
+    box-shadow: 0 15px 35px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    transition: transform 0.3s ease;
+}
+
+.box:hover {
+    transform: translateY(-5px);
+}
+
+/* ================= PROJECT TITLE ================= */
+.project-title {
+    font-size: 32px;
+    font-weight: 800;
+    margin-bottom: 5px;
+    color: #1e293b; /* Dark text to pop against the white card */
+    letter-spacing: -0.5px;
+}
+
+/* ================= SUB TITLE ================= */
+h2 {
+    margin-bottom: 30px;
+    color: #64748b;
+    font-size: 16px;
+    font-weight: 500;
+}
+
+/* ================= INPUTS ================= */
+input {
+    width: 100%;
+    padding: 14px 20px;
+    margin-top: 15px;
+    border-radius: 12px;
+    border: 2px solid #f1f5f9;
+    background: #f8fafc;
+    font-size: 15px;
+    color: #1e293b;
+    transition: all 0.3s ease;
+}
+
+input:focus {
+    outline: none;
+    border-color: #6366f1;
+    background: white;
+    box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.1);
+}
+
+/* ================= BUTTON ================= */
+button {
+    width: 100%;
+    padding: 14px;
+    margin-top: 25px;
+    border-radius: 50px; /* Pill-shaped like your "Create New Note" button */
+    border: none;
+    cursor: pointer;
+    font-weight: 700;
+    font-size: 16px;
+    /* Gradient matching your dashboard's primary action button */
+    background: linear-gradient(90deg, #4f46e5, #06b6d4);
+    color: white;
+    box-shadow: 0 4px 15px rgba(79, 70, 229, 0.4);
+    transition: 0.3s ease;
+}
+
+button:hover {
+    filter: brightness(1.1);
+    box-shadow: 0 6px 20px rgba(79, 70, 229, 0.6);
+    transform: scale(1.02);
+}
+
+/* ================= ERROR ================= */
+.error {
+    color: #ef4444;
+    margin-top: 15px;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+/* ================= LINK ================= */
+.link {
+    margin-top: 25px;
+    font-size: 14px;
+    color: #64748b;
+}
+
+.link a {
+    text-decoration: none;
+    color: #4f46e5;
+    font-weight: 700;
+    margin-left: 5px;
+}
+
+.link a:hover {
+    text-decoration: underline;
+}

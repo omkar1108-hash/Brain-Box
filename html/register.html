@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Register</title>
+    <style>
+        body {
+            font-family: Arial;
+            background: #f4f6f8;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+        }
+        .box {
+            background: white;
+            padding: 30px;
+            width: 320px;
+            border-radius: 8px;
+        }
+        input, button {
+            width: 100%;
+            padding: 10px;
+            margin-top: 10px;
+        }
+        .link {
+            margin-top: 15px;
+            text-align: center;
+        }
+        .error {
+            color: red;
+            text-align: center;
+        }
+    </style>
+    <link rel="stylesheet" href="../css/register.css">
+</head>
+<body>
+
+<div class="box">
+    <h2>Register</h2>
+    <div class="project-title">BRAIN BOX</div>
+    <h2>Create Your Account</h2>
+
+    <input id="username" placeholder="Username">
+    <input id="email" placeholder="Email">
+    <input id="password" type="password" placeholder="Password">
+
+    <button onclick="register()">Register</button>
+
+    <div id="error" class="error"></div>
+
+    <div class="link">
+        Already have an account? <a href="/login">Login</a>
+    </div>
+</div>
+
+<script src="../js/register.js"></script>
+</body>
+</html>

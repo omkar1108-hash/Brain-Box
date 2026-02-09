@@ -1,0 +1,278 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= BACKGROUND ================= */
+body {
+    font-family: "Segoe UI", Arial, sans-serif;
+    background: linear-gradient(-45deg, #4f46e5, #7c3aed, #0ea5e9, #22c55e);
+    background-size: 400% 400%;
+    animation: bgmove 12s ease infinite;
+    min-height: 100vh;
+    padding: 40px;
+}
+
+@keyframes bgmove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ================= CONTAINER ================= */
+.dashboard-container {
+    max-width: 1100px;
+    margin: auto;
+}
+
+/* ================= TITLE ================= */
+h2 {
+    text-align: center;
+    margin-bottom: 25px;
+    color: white;
+    font-size: 28px;
+    text-shadow: 0 5px 15px rgba(0,0,0,0.3);
+}
+
+/* ================= TOP BAR ================= */
+.top-bar {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.create-btn {
+    padding: 12px 20px;
+    border-radius: 14px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 15px;
+    background: linear-gradient(45deg, #2563eb, #60a5fa);
+    color: white;
+    transition: 0.3s;
+}
+
+.create-btn:hover {
+    transform: translateY(-4px) scale(1.05);
+}
+
+/* ================= FILTER BUTTONS ================= */
+.filter-section {
+    text-align: center;
+    margin: 20px 0;
+}
+
+.filter-btn {
+    padding: 8px 14px;
+    margin: 6px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    background: white;
+    transition: 0.2s;
+}
+
+.filter-btn.active {
+    background: linear-gradient(45deg, #2563eb, #60a5fa);
+    color: white;
+}
+
+.filter-btn:hover {
+    transform: translateY(-2px);
+}
+
+/* ================= CATEGORY BUTTONS ================= */
+.category-section {
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.category-section button {
+    padding: 8px 14px;
+    margin: 6px;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
+    font-weight: 600;
+    background: linear-gradient(45deg, #7c3aed, #c084fc);
+    color: white;
+    transition: 0.2s;
+}
+
+.category-section button:hover {
+    transform: translateY(-2px);
+}
+
+/* ================= NOTES GRID ================= */
+.notes-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+    gap: 20px;
+}
+
+/* ================= NOTE CARD ================= */
+.note-card {
+    position: relative;
+    background: rgba(255,255,255,0.95);
+    border-radius: 18px;
+    padding: 20px;
+    padding-bottom: 50px;
+    box-shadow: 0 20px 45px rgba(0,0,0,0.25);
+    transition: 0.3s;
+}
+
+.note-card:hover {
+    transform: translateY(-8px);
+}
+
+/* ================= TITLE ================= */
+.note-title {
+    font-size: 18px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+/* ================= DELETE BUTTON ================= */
+.delete-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    border: none;
+    background: #ef4444;
+    color: white;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+/* ================= FOOTER DATES ================= */
+.note-footer {
+    position: absolute;
+    bottom: 12px;
+    left: 0;
+    width: 100%;
+    padding: 0 16px;
+    display: flex;
+    justify-content: space-between;
+    font-size: 11px;
+    color: #555;
+}
+.filter-section,
+.category-section {
+    margin-bottom: 25px;
+}
+.delete-btn {
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    border: none;
+    background: #ef4444;
+    color: white;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: 0.2s;
+}
+
+.delete-btn:hover {
+    background: #dc2626;
+    transform: scale(1.1);
+}
+/* ================= MASTER NAVBAR ================= */
+
+#master-container {
+    width: 100%;
+}
+
+/* Navbar wrapper (injected by master.js) */
+.navbar {
+    background: #2f3e4e;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Left side (Brain Box text) */
+.navbar .nav-left {
+    font-size: 20px;
+    font-weight: 600;
+}
+
+/* Right side links */
+.navbar .nav-right {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.navbar .nav-right a {
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+    transition: 0.2s;
+}
+
+.navbar .nav-right a:hover {
+    text-decoration: underline;
+}
+
+/* Logout Button */
+.navbar .logout-btn {
+    padding: 8px 16px;
+    background: #e74c3c;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.navbar .logout-btn:hover {
+    background: #c0392b;
+}
+/* Style first child inside master container */
+#master-container > div {
+    background: #2f3e4e;
+    color: white;
+    padding: 15px 40px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+/* Style all links inside it */
+#master-container a {
+    color: white;
+    text-decoration: none;
+    margin-left: 20px;
+}
+
+#master-container a:hover {
+    text-decoration: underline;
+}
+
+/* Style logout button if exists */
+#master-container button {
+    padding: 8px 16px;
+    background: #e74c3c;
+    border: none;
+    color: white;
+    border-radius: 6px;
+    cursor: pointer;
+}
+.filter-section,
+.category-section {
+    display: flex;
+    justify-content: flex-start;   /* <-- THIS moves it left */
+}

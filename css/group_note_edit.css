@@ -1,0 +1,150 @@
+/* ================= RESET ================= */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* ================= ANIMATED BACKGROUND (FIXED) ================= */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 20px;
+    margin: 0;
+
+    /* Using the 4-color palette from your favorite theme */
+    background: linear-gradient(-45deg, #4f46e5, #7c3aed, #0ea5e9, #22c55e);
+    background-size: 400% 400%;
+    /* Ensure this name matches the @keyframes below */
+    animation: bgmove 12s ease infinite;
+}
+
+@keyframes bgmove {
+    0% { background-position: 0% 50%; }
+    50% { background-position: 100% 50%; }
+    100% { background-position: 0% 50%; }
+}
+
+/* ================= MAIN CONTAINER CARD ================= */
+.form-card, .container {
+    background: rgba(255, 255, 255, 0.95);
+    width: 100%;
+    max-width: 950px;
+    padding: 40px;
+    border-radius: 24px;
+    box-shadow: 0 20px 60px rgba(0, 0, 0, 0.2);
+    position: relative;
+}
+
+.header-title, h2 {
+    text-align: center;
+    color: #1a237e;
+    margin-bottom: 25px;
+    font-size: 28px;
+    margin-top: 0;
+}
+
+/* ================= LABELS & INPUTS ================= */
+label {
+    font-weight: 600;
+    color: #2d3748;
+    display: block;
+    margin-bottom: 8px;
+    margin-top: 15px;
+}
+
+input[type="text"], 
+input[type="number"], 
+input[type="password"],
+select {
+    background: #f1f5f9;
+    border: 1px solid #d1d9e6;
+    border-radius: 10px;
+    padding: 12px;
+    font-size: 15px;
+    width: 100%;
+    outline: none;
+    transition: 0.3s;
+}
+
+input:focus, select:focus {
+    box-shadow: 0 0 0 2px #7c3aed;
+    background: white;
+}
+
+/* ================= TOOLBAR & EDITOR ================= */
+.toolbar {
+    background: #ffffff;
+    padding: 10px;
+    border-radius: 12px 12px 0 0;
+    border: 1px solid #d1d9e6;
+    display: flex;
+    gap: 6px;
+    flex-wrap: wrap;
+    align-items: center;
+    margin-top: 10px;
+}
+
+.toolbar button {
+    background: white;
+    border: 1px solid #ccc;
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+    font-size: 14px;
+    transition: 0.2s;
+}
+
+.toolbar button:hover {
+    background: #f0f4ff;
+}
+
+#content {
+    width: 100%;
+    min-height: 350px;
+    background: white;
+    border: 1px solid #d1d9e6;
+    border-top: none;
+    border-radius: 0 0 12px 12px;
+    padding: 20px;
+    outline: none;
+}
+
+/* ================= ACTION BUTTONS ================= */
+.btn-group {
+    margin-top: 25px;
+    display: flex;
+    gap: 15px;
+}
+
+
+.primary-btn, .pdf-btn, .secondary-btn, .action-btn {
+    flex: 1;
+    padding: 14px;
+    border-radius: 14px;
+    border: none;
+    font-weight: bold;
+    cursor: pointer;
+    transition: transform 0.2s, opacity 0.2s;
+    color: white;
+    font-size: 15px;
+}
+
+
+.primary-btn { background: #4a90e2; }
+.pdf-btn { background: #2a7ade; }
+.secondary-btn { background: #64748b; }
+
+.primary-btn:hover, .pdf-btn:hover, .secondary-btn:hover {
+    transform: translateY(-2px);
+    opacity: 0.9;
+}
+
+/* ================= LEGACY EDITOR STYLES ================= */
+.image-wrapper { display: inline-block; resize: both; overflow: hidden; margin: 4px; }
+.image-wrapper img { width: 100%; height: auto; }
+.locked-block { background: #f2f2f2; border-left: 4px solid #999; padding: 10px; margin: 8px 0; }
+.meta-section, #timestamps { text-align: right; font-size: 12px; color: #666; margin-bottom: 10px; }
