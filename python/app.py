@@ -27,7 +27,7 @@ from group_task_dashboard_api import group_task_dashboard_bp
 # =====================================================
 app = Flask(
     __name__,
-    static_folder=os.path.join(BASE_DIR, "..")
+    static_folder=os.path.join(BASE_DIR, ".."),
     static_url_path=""
 )
 
