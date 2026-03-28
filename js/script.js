@@ -1,5 +1,5 @@
 function redirectToDashboard() {
-    window.location.assign("/html/dashboard.html");
+    window.location.assign("/notes-dashboard");
 }
 
 document.getElementById("saveBtn").addEventListener("click", function () {
