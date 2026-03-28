@@ -1,6 +1,6 @@
 from flask import Blueprint, request, jsonify
 from datetime import datetime
-from task_database import get_task_connection
+from .task_database import get_task_connection
 
 task_action_bp = Blueprint("task_action_bp", __name__)
 
