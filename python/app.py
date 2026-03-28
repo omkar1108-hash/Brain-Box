@@ -36,7 +36,7 @@ CORS(app)
 # =====================================================
 # REGISTER BLUEPRINTS
 # =====================================================
-app.register_blueprint(auth_bp)
+app.register_blueprint(auth_bp, url_prefix="/api")
 app.register_blueprint(task_bp)
 app.register_blueprint(task_dashboard_bp)
 app.register_blueprint(task_action_bp)
