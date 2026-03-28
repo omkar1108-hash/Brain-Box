@@ -10,23 +10,47 @@ auth_bp = Blueprint("auth_bp", __name__)
 
 BASE_DIR = Path(__file__).resolve().parent.parent
 
-# ✅ Use writable DB path on Render
+# ✅ Writable DB path (Render)
 DB_PATH = "/tmp/user_data.db"
 
-# ✅ Copy DB to /tmp if not exists
+# ✅ Original DB
 ORIGINAL_DB = BASE_DIR / "database" / "user_data.db"
 
-if not os.path.exists(DB_PATH):
-    shutil.copy(ORIGINAL_DB, DB_PATH)
+# =====================================================
+# INIT DB (SAFE COPY)
+# =====================================================
+def init_db():
+    try:
+        if not os.path.exists(DB_PATH):
+            shutil.copy(ORIGINAL_DB, DB_PATH)
+            print("✅ DB copied to /tmp")
+        else:
+            print("ℹ️ Using existing /tmp DB")
+
+    except Exception as e:
+        print("❌ DB INIT ERROR:", str(e))
+        traceback.print_exc()
+
+init_db()
+
+
+def get_connection():
+    conn = sqlite3.connect(DB_PATH)
+    conn.row_factory = sqlite3.Row
+    return conn
 
 
 # =====================================================
 # REGISTER
 # =====================================================
-@auth_bp.route("/api/register", methods=["POST"])
+@auth_bp.route("/register", methods=["POST"])
 def register():
+    print("🔥 REGISTER API HIT")
+
     try:
         data = request.get_json(silent=True)
+        print("DATA:", data)
+
         if not data:
             return jsonify({"success": False, "error": "Invalid JSON"}), 400
 
@@ -39,7 +63,7 @@ def register():
 
         password_hash = generate_password_hash(password)
 
-        conn = sqlite3.connect(DB_PATH)
+        conn = get_connection()
         cur = conn.cursor()
 
         cur.execute("""
@@ -59,7 +83,7 @@ def register():
         }), 409
 
     except Exception as e:
-        print("REGISTER ERROR:", str(e))
+        print("❌ REGISTER ERROR:", str(e))
         traceback.print_exc()
         return jsonify({
             "success": False,
@@ -70,10 +94,14 @@ def register():
 # =====================================================
 # LOGIN
 # =====================================================
-@auth_bp.route("/api/login", methods=["POST"])
+@auth_bp.route("/login", methods=["POST"])
 def login():
+    print("🔥 LOGIN API HIT")
+
     try:
         data = request.get_json(silent=True)
+        print("DATA:", data)
+
         if not data:
             return jsonify({"success": False, "error": "Invalid JSON"}), 400
 
@@ -83,8 +111,7 @@ def login():
         if not username or not password:
             return jsonify({"success": False, "error": "Missing fields"}), 400
 
-        conn = sqlite3.connect(DB_PATH)
-        conn.row_factory = sqlite3.Row
+        conn = get_connection()
         cur = conn.cursor()
 
         cur.execute("""
@@ -108,7 +135,7 @@ def login():
         })
 
     except Exception as e:
-        print("LOGIN ERROR:", str(e))
+        print("❌ LOGIN ERROR:", str(e))
         traceback.print_exc()
         return jsonify({
             "success": False,
