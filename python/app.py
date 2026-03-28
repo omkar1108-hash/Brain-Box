@@ -3,6 +3,10 @@ from flask_cors import CORS
 import joblib, hashlib
 import webbrowser
 import threading
+import os
+
+BASE_DIR = os.path.dirname(os.path.abspath(__file__))
+HTML_DIR = os.path.join(BASE_DIR, "..", "html")
 
 from database import get_connection
 from task_api import task_bp
@@ -48,7 +52,8 @@ app.add_url_rule("/task-series", view_func=list_task_series, methods=["GET"])
 # =====================================================
 # ML MODEL
 # =====================================================
-model = joblib.load("../model/note_classifier.pkl")
+MODEL_PATH = os.path.join(BASE_DIR, "..", "model", "note_classifier.pkl")
+model = joblib.load(MODEL_PATH)
 
 def hash_password(pwd):
     return hashlib.sha256(pwd.encode()).hexdigest()
@@ -277,76 +282,76 @@ def verify_password():
 # =====================================================
 @app.route("/")
 def root():
-    return send_from_directory("../html", "login.html")
+    return send_from_directory(HTML_DIR, "login.html")
 
 @app.route("/notes-dashboard")
 def notes_dashboard_page():
-    return send_from_directory("../html", "dashboard.html")
+    return send_from_directory(HTML_DIR, "dashboard.html")
 
 @app.route("/notes-create")
 def notes_create_page():
-    return send_from_directory("../html", "index.html")
+    return send_from_directory(HTML_DIR, "index.html")
 
 @app.route("/notes-edit")
 def notes_edit_page():
-    return send_from_directory("../html", "edit.html")
+    return send_from_directory(HTML_DIR, "edit.html")
 
 @app.route("/task-dashboard")
 def task_dashboard_page():
-    return send_from_directory("../html", "task_dashboard.html")
+    return send_from_directory(HTML_DIR, "task_dashboard.html")
 
 @app.route("/task-create")
 def task_create_page():
-    return send_from_directory("../html", "task_create.html")
+    return send_from_directory(HTML_DIR, "task_create.html")
 
 @app.route("/task-edit")
 def task_edit_page():
-    return send_from_directory("../html", "task_edit.html")
+    return send_from_directory(HTML_DIR, "task_edit.html")
 
 @app.route("/task-series-create")
 def task_series_create_page():
-    return send_from_directory("../html", "task_series_create.html")
+    return send_from_directory(HTML_DIR, "task_series_create.html")
 
 @app.route("/task-series-edit")
 def task_series_edit_page():
-    return send_from_directory("../html", "task_series_edit.html")
+    return send_from_directory(HTML_DIR, "task_series_edit.html")
 
 @app.route("/login")
 def login_page():
-    return send_from_directory("../html", "login.html")
+    return send_from_directory(HTML_DIR, "login.html")
 
 
 @app.route("/register")
 def register_page():
-    return send_from_directory("../html", "register.html")
+    return send_from_directory(HTML_DIR, "register.html")
 
 
 @app.route("/group-dashboard")
 def group_dashboard_page():
-    return send_from_directory("../html", "group_dashboard.html")
+    return send_from_directory(HTML_DIR, "group_dashboard.html")
 
 @app.route("/group-note-create")
 def group_note_create_page():
-    return send_from_directory("../html", "group_note_create.html")
+    return send_from_directory(HTML_DIR, "group_note_create.html")
 
 @app.route("/group-note-edit")
 def group_note_edit_page():
-    return send_from_directory("../html", "group_note_edit.html")
+    return send_from_directory(HTML_DIR, "group_note_edit.html")
 
 
 @app.route("/group-task-dashboard")
 def group_task_dashboard_page():
-    return send_from_directory("../html", "group_task_dashboard.html")
+    return send_from_directory(HTML_DIR, "group_task_dashboard.html")
 
 
 @app.route("/group-task-create")
 def group_task_create_page():
-    return send_from_directory("../html", "group_task_create.html")
+    return send_from_directory(HTML_DIR, "group_task_create.html")
 
 
 @app.route("/group-task-edit")
 def group_task_edit_page():
-    return send_from_directory("../html", "group_task_edit.html")
+    return send_from_directory(HTML_DIR, "group_task_edit.html")
 
 def open_browser():
     webbrowser.open_new("http://127.0.0.1:5000/")
