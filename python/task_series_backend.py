@@ -2,7 +2,7 @@ from flask import Blueprint, request, jsonify
 import sqlite3
 from datetime import datetime
 from pathlib import Path
-from task_series_database import get_task_series_connection
+from .task_series_database import get_task_series_connection
 
 task_series_bp = Blueprint("task_series_bp", __name__)
 
