@@ -1,0 +1,9 @@
+services:
+  - type: web
+    name: brain-box
+    env: python
+    buildCommand: pip install -r requirements.txt
+    startCommand: gunicorn python.app:app
+    plan: free
+    runtime: python
+    pythonVersion: 3.10.13
