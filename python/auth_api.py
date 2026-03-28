@@ -27,27 +27,35 @@ def register():
 
     password_hash = generate_password_hash(password)
 
-    try:
-        conn = sqlite3.connect(DB_PATH)
-        cur = conn.cursor()
+    import traceback
 
-        cur.execute("""
-            INSERT INTO users (username, email, password_hash)
-            VALUES (?, ?, ?)
-        """, (username, email, password_hash))
+try:
+    conn = sqlite3.connect(DB_PATH)
+    cur = conn.cursor()
 
-        conn.commit()
-        conn.close()
+    cur.execute("""
+        INSERT INTO users (username, email, password_hash)
+        VALUES (?, ?, ?)
+    """, (username, email, password_hash))
 
-        return jsonify({"success": True})
+    conn.commit()
+    conn.close()
 
-    except sqlite3.IntegrityError:
-        return jsonify({
-            "success": False,
-            "error": "Username or email already exists"
-        }), 409
+    return jsonify({"success": True})
 
+except sqlite3.IntegrityError:
+    return jsonify({
+        "success": False,
+        "error": "Username or email already exists"
+    }), 409
 
+except Exception as e:
+    print("REGISTER ERROR:", str(e))
+    traceback.print_exc()
+    return jsonify({
+        "success": False,
+        "error": str(e)
+    }), 500
 # =====================================================
 # LOGIN
 # =====================================================
