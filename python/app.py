@@ -8,16 +8,15 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 HTML_DIR = os.path.join(BASE_DIR, "..", "html")
 
-from database import get_connection
-from task_api import task_bp
-from task_dashboard_api import task_dashboard_bp
-from task_series_backend import add_task_series, list_task_series, task_series_bp
-from task_action_api import task_action_bp
-from auth_api import auth_bp
-from apscheduler.schedulers.background import BackgroundScheduler
-from task_reminder_service import check_and_send_task_reminders
-from group_notes_api import group_notes_bp
-from group_task_dashboard_api import group_task_dashboard_bp
+from .database import get_connection
+from .task_api import task_bp
+from .task_dashboard_api import task_dashboard_bp
+from .task_series_backend import add_task_series, list_task_series, task_series_bp
+from .task_action_api import task_action_bp
+from .auth_api import auth_bp
+from .task_reminder_service import check_and_send_task_reminders
+from .group_notes_api import group_notes_bp
+from .group_task_dashboard_api import group_task_dashboard_bp
 
 
 
