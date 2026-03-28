@@ -23,7 +23,6 @@ def check_and_send_task_reminders():
             t.user_id
         FROM tasks t
         WHERE t.due_date IS NOT NULL
-          AND t.reminder_sent = 0
           AND t.status != 'completed'
     """)
 
