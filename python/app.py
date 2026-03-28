@@ -8,6 +8,7 @@ import os
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
 HTML_DIR = os.path.join(BASE_DIR, "..", "html")
 
+from apscheduler.schedulers.background import BackgroundScheduler
 from .database import get_connection
 from .task_api import task_bp
 from .task_dashboard_api import task_dashboard_bp
