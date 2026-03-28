@@ -99,8 +99,12 @@ def add_note():
         elif any(k in text for k in ["goal", "personal"]):
             category = "Personal"
         else:
-            probs = model.predict_proba([text])[0]
-            category = model.classes_[probs.argmax()] if max(probs) >= 0.30 else "Other"
+            try:
+                probs = model.predict_proba([text])[0]
+                category = model.classes_[probs.argmax()] if max(probs) >= 0.30 else "Other"
+            except Exception as e:
+                print("⚠️ MODEL ERROR:", str(e))
+                category = "Other"
 
     hashed_pwd = hash_password(password) if password else None
 
