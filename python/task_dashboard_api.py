@@ -1,5 +1,5 @@
 from flask import Blueprint, request, jsonify
-from task_database import get_task_connection
+from .task_database import get_task_connection
 from task_series_database import get_task_series_connection
 
 task_dashboard_bp = Blueprint("task_dashboard_bp", __name__)
