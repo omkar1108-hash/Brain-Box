@@ -1,7 +1,7 @@
 from flask import Blueprint, request, jsonify
 from datetime import datetime
-from task_database import get_task_connection
-from task_series_database import get_task_series_connection
+from .task_database import get_task_connection
+from .task_series_database import get_task_series_connection
 
 task_action_bp = Blueprint("task_action_bp", __name__)
 print("🔥 task_action_api.py LOADED")
