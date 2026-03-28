@@ -1,9 +1,9 @@
 import smtplib
 from email.mime.text import MIMEText
-
+import os
 SMTP_SERVER = "smtp.gmail.com"
 SMTP_PORT = 587
-import os
+
 
 EMAIL_ADDRESS = os.environ.get("EMAIL_ADDRESS")
 EMAIL_PASSWORD = os.environ.get("EMAIL_PASSWORD")
