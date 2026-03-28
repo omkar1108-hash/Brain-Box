@@ -1,7 +1,7 @@
 from datetime import datetime, timedelta
 from .task_database import get_task_connection
 import sqlite3
-from email_utils import send_email
+from .email_utils import send_email
 from pathlib import Path
 
 BASE_DIR = Path(__file__).resolve().parent.parent
