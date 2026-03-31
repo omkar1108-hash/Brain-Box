@@ -6,7 +6,7 @@ function register() {
 
     error.textContent = "";
 
-    fetch("/api/register", { {
+    fetch("/api/register",  {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ username, email, password })
