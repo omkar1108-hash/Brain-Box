@@ -196,3 +196,17 @@ select:focus,
         0 0 0 2px #7c3aed,
         0 6px 18px rgba(124, 58, 237, 0.25);
 }
+@media (max-width: 768px) {
+    .top-bar {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    .title-input {
+        width: 100%;
+    }
+
+    .note-body {
+        height: auto;
+    }
+}

@@ -148,3 +148,17 @@ input:focus, select:focus {
 .image-wrapper img { width: 100%; height: auto; }
 .locked-block { background: #f2f2f2; border-left: 4px solid #999; padding: 10px; margin: 8px 0; }
 .meta-section, #timestamps { text-align: right; font-size: 12px; color: #666; margin-bottom: 10px; }
+
+@media (max-width: 768px) {
+    .layout-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .toolbar {
+        flex-wrap: wrap;
+    }
+
+    #content {
+        min-height: 250px;
+    }
+}

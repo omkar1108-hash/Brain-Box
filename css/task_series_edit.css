@@ -211,3 +211,13 @@ input:focus {
 .secondary-btn:hover {
     background: #cbd5e1;
 }
+@media (max-width: 768px) {
+    .task-row {
+        grid-template-columns: 1fr;
+        gap: 10px;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+}

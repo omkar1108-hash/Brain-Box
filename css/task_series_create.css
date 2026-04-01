@@ -176,3 +176,13 @@ select:focus {
 .secondary-btn:hover {
     background: #cbd5e1;
 }
+@media (max-width: 768px) {
+    .form-card {
+        padding: 20px;
+    }
+
+    .actions {
+        flex-direction: column;
+        gap: 10px;
+    }
+}

@@ -235,3 +235,22 @@ hr {
     background: #dc2626;
     transform: translateY(-2px);
 }
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .action-buttons {
+        flex-direction: column;
+        gap: 10px;
+    }
+
+    #statusFilters,
+    #categoryButtons {
+        flex-wrap: wrap;
+    }
+
+    .notes-container {
+        grid-template-columns: 1fr;
+    }
+}

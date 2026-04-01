@@ -139,3 +139,12 @@ textarea:focus {
 .secondary-btn:hover {
     background: #cbd5e1;
 }
+@media (max-width: 768px) {
+    .form-card {
+        padding: 20px;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+}

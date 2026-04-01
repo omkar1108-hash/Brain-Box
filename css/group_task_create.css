@@ -200,3 +200,12 @@ input:focus {
     from { opacity: 0; transform: translateY(-5px); }
     to { opacity: 1; transform: translateY(0); }
 }
+@media (max-width: 768px) {
+    .form-card {
+        padding: 20px;
+    }
+
+    .btn-group {
+        flex-direction: column;
+    }
+}

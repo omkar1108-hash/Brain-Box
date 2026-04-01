@@ -70,3 +70,13 @@ input, textarea {
 .full {
   width: 100%;
 }
+@media (max-width: 768px) {
+    .screen-content {
+        width: 95%;
+        transform: translate(-50%, -50%) scale(0.9);
+    }
+
+    h1 {
+        font-size: 1.8rem;
+    }
+}

@@ -276,3 +276,32 @@ h2 {
     display: flex;
     justify-content: flex-start;   /* <-- THIS moves it left */
 }
+
+
+/* ===== RESPONSIVE DASHBOARD ===== */
+@media (max-width: 768px) {
+    body {
+        padding: 20px;
+    }
+
+    .dashboard-container {
+        padding: 0 10px;
+    }
+
+    .main-layout {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .sidebar {
+        width: 100%;
+    }
+
+    .notes-container {
+        grid-template-columns: 1fr;
+    }
+
+    .create-btn {
+        width: 100%;
+    }
+}

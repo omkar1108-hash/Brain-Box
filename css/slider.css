@@ -84,3 +84,14 @@
   border-radius: 8px;
   cursor: pointer;
 }
+@media (max-width: 768px) {
+    .slider-track {
+        overflow-x: auto;
+    }
+
+    .type-card,
+    .category-card,
+    .note-card {
+        min-width: 180px;
+    }
+}

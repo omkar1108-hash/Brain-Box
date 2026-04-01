@@ -208,3 +208,18 @@ input[type="range"] {
 .form-card label + select {
     margin-bottom: 8px;
 }
+@media (max-width: 768px) {
+    body {
+        padding: 20px 10px;
+    }
+
+    .form-card {
+        padding: 20px;
+    }
+
+    .btn-group {
+        display: flex;
+        flex-direction: column;
+        gap: 10px;
+    }
+}
